@@ -7,7 +7,7 @@ from sklearn.pipeline import Pipeline
 from sklearn.preprocessing import OneHotEncoder
 from sklearn.impute import SimpleImputer
 import joblib
-import shap
+
 
 
 data = pd.read_csv("hf://datasets/scikit-learn/churn-prediction/dataset.csv")
@@ -56,13 +56,6 @@ fp.fit(X_train,y_train)
 
 y_pred = fp.predict(X_test)
 
-
-model = RandomForestClassifier(n_estimators=400, max_depth=8 ,min_samples_split=20,
-    min_samples_leaf=10,max_features='sqrt',random_state=42,class_weight='balanced')
-
-explainer = shap.TreeExplainer(model)
-shap_values = explainer.shap_values(X_test)
-shap.plots.waterfall(shap_values[0])
 print(classification_report(y_test,y_pred))
 
 
