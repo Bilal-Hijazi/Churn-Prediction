@@ -3,7 +3,6 @@ import joblib
 import pandas as pd
 from pipeline import data
 
-
 st.set_page_config(page_title="Telco Churn Prediction", layout="wide")
 
 st.title("Telco Churn Prediction")
