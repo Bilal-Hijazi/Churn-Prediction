@@ -3,3 +3,4 @@ scikit-learn
 joblib
 streamlit
 fsspec
+huggingface_hub
